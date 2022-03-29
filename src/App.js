@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Base from "./components/Base";
 import Toppings from "./components/Toppings";
 import Order from "./components/Order";
+import Movie from "./components/Movie";
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
@@ -36,6 +37,7 @@ function App() {
           element={<Toppings addTopping={addTopping} pizza={pizza} />}
         />
         <Route path="/order" element={<Order pizza={pizza} />} />
+        <Route path="/movie" element={<Movie />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </>

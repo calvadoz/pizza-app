@@ -31,9 +31,7 @@ const childVariants = {
 const Order = ({ pizza }) => {
   return (
     <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+
       className="container order"
     >
       <h2>Thank you for your order :)</h2>

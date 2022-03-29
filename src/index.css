@@ -116,3 +116,16 @@ li span.active::before {
 .order p {
   margin: 20px auto;
 }
+
+.movie-wrapper {
+  text-align: center;
+}
+
+.movie-cover {
+  width: 20%;
+}
+
+.movie-title {
+  font-size: 14px;
+  font-weight: bold;
+}
