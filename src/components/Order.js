@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const containerVariants = {
   hidden: {
@@ -28,17 +28,24 @@ const childVariants = {
   },
 };
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true);
+    }, 3000);
+  }, [setShowModal]);
+
   return (
     <motion.div
-
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.5 } }}
       className="container order"
     >
-      <h2>Thank you for your order :)</h2>
+      <motion.h2>Thank you for your order :)</motion.h2>}
       <motion.p variants={childVariants}>
         You ordered a {pizza.base} pizza with:
       </motion.p>
-      <motion.div variants={containerVariants}>
+      <motion.div variants={childVariants}>
         {pizza.toppings.map((topping) => (
           <motion.div variants={childVariants} key={topping}>
             {topping}
